@@ -1,0 +1,157 @@
+.footer {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.footer .wrapper {
+  display: flex;
+
+  margin-top: 37px;
+}
+
+.footer .menu__btn {
+  display: none;
+}
+
+.footer .menu__list-item {
+  font-size: 0.9rem;
+}
+
+.footer-logo {
+  margin: 15px;
+}
+
+.twitter {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.twitter__image {
+  flex: 0 0 55px;
+}
+
+.twitter__description {
+  flex: 1 0 100px;
+}
+
+.twitter__description-title {
+  display: block;
+
+  color: #ffffff;
+
+  font-size: 2rem;
+}
+
+.twitter__description-slogan {
+  color: #727272;
+}
+
+.twitter__post {
+  position: relative;
+
+  flex: 1 0 calc(100% - 67px);
+
+  padding: 20px;
+
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.twitter__post::before {
+  position: absolute;
+  top: -19px;
+  left: 0;
+
+  content: url("../img/twitter-speech-bubble.png");
+}
+
+.twitter__post-text {
+  color: #858585;
+
+  line-height: 18px;
+}
+
+.twitter__post-date {
+  color: #0b81be;
+
+  font-size: 0.83rem;
+  font-style: italic;
+}
+
+.copyright {
+  color: #ffffff;
+}
+
+@media (min-width: 769px) {
+  .footer-logo {
+    text-align: right;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-left {
+    flex: 1 0 100%;
+  }
+  .footer-right {
+    flex: 1 0 100%;
+  }
+  .footer .wrapper {
+    flex-wrap: wrap;
+  }
+  .footer-logo {
+    text-align: center;
+  }
+  .copyright {
+    margin: 30px 15px 15px 15px;
+
+    text-align: center;
+  }
+}
+
+@media (max-width: 850px) {
+  .footer .menu__list {
+    top: initial;
+    bottom: 100%;
+  }
+}
+
+@media (min-width: 851px) {
+  .copyright {
+    margin: 57px 15px 15px 15px;
+
+    text-align: right;
+  }
+}
+
+@media (max-width: 850px) and (min-width: 769px) {
+  .footer-left {
+    flex: 0 0 60%;
+  }
+  .footer-right {
+    flex: 0 0 40%;
+  }
+  .copyright {
+    margin: 75px 15px 15px 15px;
+
+    text-align: right;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer .menu {
+    justify-content: center;
+  }
+  .twitter__post {
+    margin: 12px 0 30px 37px;
+  }
+}
+
+@media (min-width: 577px) {
+  .twitter__post {
+    margin: 12px 30px 30px 37px;
+  }
+}

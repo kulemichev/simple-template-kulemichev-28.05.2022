@@ -1,0 +1,176 @@
+.menu {
+  position: relative;
+  z-index: 9;
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+.menu__list {
+  display: flex;
+  align-items: center;
+
+  min-height: 40px;
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.menu__list.active {
+  z-index: 1;
+
+  visibility: visible;
+
+  opacity: 1;
+}
+
+.menu__list.active .menu__list-item {
+  width: 100%;
+  margin: 0;
+
+  text-align: center;
+}
+
+.menu__list.active .menu__list-item a {
+  width: 100%;
+  padding: 15px;
+
+  border-radius: 0;
+}
+
+.menu__list-item {
+  display: block;
+
+  margin-left: 7px;
+}
+
+.menu__list-item a {
+  display: block;
+
+  padding: 12px 15px;
+
+  text-decoration: none;
+  text-transform: uppercase;
+
+  color: #efefef;
+  border-radius: 15px;
+}
+
+.menu__list-item:hover:not(.active) a {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.menu__list-item.active a {
+  background: -webkit-gradient(
+  linear,
+  left top,
+  left bottom,
+  from(#0f8bbe),
+  color-stop(50%, #2989d8),
+  color-stop(51%, #207cca),
+  to(#0eb7fe)
+  );
+  background: -webkit-linear-gradient(
+  top,
+  #0f8bbe 0%,
+  #2989d8 50%,
+  #207cca 51%,
+  #0eb7fe 100%
+  );
+  background:      -o-linear-gradient(
+  top,
+  #0f8bbe 0%,
+  #2989d8 50%,
+  #207cca 51%,
+  #0eb7fe 100%
+  );
+  background:         linear-gradient(
+  to bottom,
+  #0f8bbe 0%,
+  #2989d8 50%,
+  #207cca 51%,
+  #0eb7fe 100%
+  );
+}
+
+.menu__btn {
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 50px;
+  height: 50px;
+
+  cursor: pointer;
+
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.menu__btn-row {
+  position: relative;
+
+  width: 60%;
+  height: 2px;
+  margin: 2px 0;
+
+  transition: all 0.5s;
+
+  background-color: #ffffff;
+}
+
+.menu__btn.active .menu__btn-row:first-of-type {
+  top: 6px;
+
+  transform: rotate(-135deg);
+}
+
+.menu__btn.active .menu__btn-row:last-of-type {
+  top: -6px;
+
+  transform: rotate(-225deg);
+}
+
+.menu__btn.active .menu__btn-row:nth-of-type(2) {
+  opacity: 0;
+}
+
+@media (min-width: 769px) {
+  .menu {
+    flex: 1 0 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu {
+    flex: 1 0 50px;
+  }
+}
+
+@media (max-width: 850px) {
+  .menu__list {
+    position: absolute;
+    z-index: -999;
+    top: 100%;
+    right: -15px;
+
+    visibility: hidden;
+    flex-direction: column;
+
+    width: 100vw;
+
+    transition: opacity 0.5s;
+
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  .menu__btn {
+    display: flex;
+  }
+}
+
+@media (min-width: 851px) {
+  .menu__btn {
+    display: none;
+  }
+}
