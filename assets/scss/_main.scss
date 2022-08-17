@@ -1,24 +1,30 @@
 .main {
-  background-color: #efefef;
+  background-color: $light-color;
 }
 .main p {
   text-align: justify;
+}
+
+.container {
+  display: flex;
+  margin-bottom: 50px;
+  padding: $gutter;
+  background: rgba(#ffffff, 0.1);
+  flex-wrap: wrap;
 }
 
 @media (min-width: 769px) {
   .main {
     flex: 1 0 calc(100% - 300px);
     order: 3;
-
     padding: 0 20px 15px 15px;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: $small) {
   .main {
     flex: 1 0 100%;
     order: 2;
-
     padding: 20px;
   }
 }

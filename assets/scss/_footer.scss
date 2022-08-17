@@ -1,24 +1,22 @@
 .footer {
   display: flex;
   justify-content: center;
-
   width: 100%;
+  background-color: rgba(#000000, 0.4);
 
-  background-color: rgba(0, 0, 0, 0.4);
-}
+  .wrapper {
+    display: flex;
 
-.footer .wrapper {
-  display: flex;
+    margin-top: 37px;
+  }
 
-  margin-top: 37px;
-}
+  .menu__btn {
+    display: none;
+  }
 
-.footer .menu__btn {
-  display: none;
-}
-
-.footer .menu__list-item {
-  font-size: 0.9rem;
+  .menu__list-item {
+    font-size: 0.9rem;
+  }
 }
 
 .footer-logo {
@@ -28,58 +26,50 @@
 .twitter {
   display: flex;
   flex-wrap: wrap;
-}
 
-.twitter__image {
-  flex: 0 0 55px;
-}
+  &__image {
+    flex: 0 0 55px;
+  }
 
-.twitter__description {
-  flex: 1 0 100px;
-}
+  &__description {
+    flex: 1 0 100px;
 
-.twitter__description-title {
-  display: block;
+    &-title {
+      display: block;
+      color: #ffffff;
+      font-size: 2rem;
+    }
 
-  color: #ffffff;
+    &-slogan {
+      color: #727272;
+    }
+  }
 
-  font-size: 2rem;
-}
+  &__post {
+    position: relative;
+    flex: 1 0 calc(100% - 67px);
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.4);
+  }
 
-.twitter__description-slogan {
-  color: #727272;
-}
+  &::before {
+    position: absolute;
+    top: -19px;
+    left: 0;
+    content: url("../img/twitter-speech-bubble.png");
+  }
 
-.twitter__post {
-  position: relative;
+  &__post-text {
+    color: $base-color;
+    line-height: 18px;
+  }
 
-  flex: 1 0 calc(100% - 67px);
-
-  padding: 20px;
-
-  border-radius: 10px;
-  background: rgba(0, 0, 0, 0.4);
-}
-
-.twitter__post::before {
-  position: absolute;
-  top: -19px;
-  left: 0;
-
-  content: url("../img/twitter-speech-bubble.png");
-}
-
-.twitter__post-text {
-  color: #858585;
-
-  line-height: 18px;
-}
-
-.twitter__post-date {
-  color: #0b81be;
-
-  font-size: 0.83rem;
-  font-style: italic;
+  &__post-date {
+    color: $accent-color;
+    font-size: 0.83rem;
+    font-style: italic;
+  }
 }
 
 .copyright {
@@ -107,12 +97,11 @@
   }
   .copyright {
     margin: 30px 15px 15px 15px;
-
     text-align: center;
   }
 }
 
-@media (max-width: 850px) {
+@media (max-width: $large) {
   .footer .menu__list {
     top: initial;
     bottom: 100%;
@@ -122,12 +111,11 @@
 @media (min-width: 851px) {
   .copyright {
     margin: 57px 15px 15px 15px;
-
     text-align: right;
   }
 }
 
-@media (max-width: 850px) and (min-width: 769px) {
+@media (max-width: $large) and (min-width: 769px) {
   .footer-left {
     flex: 0 0 60%;
   }
@@ -136,12 +124,11 @@
   }
   .copyright {
     margin: 75px 15px 15px 15px;
-
     text-align: right;
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: $xsmall) {
   .footer .menu {
     justify-content: center;
   }

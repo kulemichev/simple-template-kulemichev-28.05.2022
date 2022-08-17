@@ -10,11 +10,9 @@ html {
 body {
   display: flex;
   flex-direction: column;
-
   background: url("../img/background.jpg");
   background-color: #3a3a3a;
   background-position: 50% 0;
-
   align-items: center;
 }
 
@@ -24,9 +22,7 @@ a {
 
 h2 {
   margin: 10px 0;
-
   color: $accent-color;
-
   font-size: 2rem;
   font-weight: normal;
 }
@@ -38,7 +34,6 @@ h3 {
 
 p {
   color: $base-color;
-
   line-height: 1.75;
 }
 
@@ -52,7 +47,6 @@ li {
 
 .wrapper {
   max-width: $large;
-  padding: 0 $gutter;
-
+  padding: 0 15px;
   flex-grow: 1;
 }

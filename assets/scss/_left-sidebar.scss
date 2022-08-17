@@ -1,75 +1,57 @@
 .left-sidebar {
   position: relative;
+  background-color: $light-color;
 
-  background-color: #efefef;
-}
-
-.left-sidebar ul {
-  padding-left: 20px;
-}
-
-.left-sidebar li {
-  position: relative;
-
-  padding: 7.5px;
-
-  list-style: none;
-
-  color: #858585;
-
-  font-style: italic;
-}
-
-.left-sidebar li::before {
-  position: absolute;
-
-  margin-left: -15px;
-
-  content: url("../img/main-list-arrow.png");
-}
-
-.left-sidebar li span {
-  position: relative;
-}
-
-.left-sidebar li span::after {
-  position: absolute;
-  right: 0;
-  bottom: -10px;
-  left: 0;
-
-  height: 1px;
-
-  content: "";
-
-  background-color: #dddddd;
-}
-
-@media (min-width: 769px) {
-  .left-sidebar {
+  @media (min-width: 769px) {
     flex: 0 0 300px;
     order: 2;
-
     padding: 0 15px 15px 20px;
+
+    &::after {
+      position: absolute;
+      top: 15px;
+      right: 0;
+      height: 90%;
+      content: "";
+      border-right: 1px solid darken($light-color, 7%);
+    }
   }
-  .left-sidebar::after {
-    position: absolute;
-    top: 15px;
-    right: 0;
 
-    height: 90%;
-
-    content: "";
-
-    border-right: 1px solid #dddddd;
-  }
-}
-
-@media (max-width: 768px) {
-  .left-sidebar {
+  @media (max-width: $small) {
     flex: 1 0 100%;
     order: 3;
-
     padding: 0 20px 20px 20px;
+  }
+
+  ul {
+    padding-left: 20px;
+  }
+
+  li {
+    position: relative;
+    padding: 7.5px;
+    list-style: none;
+    color: $base-color;
+    font-style: italic;
+
+    &::before {
+      position: absolute;
+      margin-left: -15px;
+      content: url("../img/main-list-arrow.png");
+    }
+
+    span {
+      position: relative;
+
+      &::after {
+        position: absolute;
+        right: 0;
+        bottom: -10px;
+        left: 0;
+        height: 1px;
+        content: "";
+        background-color: darken($light-color, 7%);
+      }
+    }
   }
 }
