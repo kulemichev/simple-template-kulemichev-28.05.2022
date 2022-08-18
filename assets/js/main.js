@@ -1,47 +1,41 @@
-(function ($) {
-
-  $ {
-    '.menu__btn'
-  }.on('click', function () {
+$('.menu__btn').on('click', function () {
     $(this).toggleClass('active').
-    next().
-    toggleClass('active');
-  });
+        next().
+        toggleClass('active');
+});
 
-  let $slideItems = $('.carousel-slide');
-  let $nextBtn = $('.next.carousel-control');
-  let $prevBtn = $('.prev.carousel-control');
-  let currentSlide = 0;
+let $slideItems = $('.carousel-slide');
+let $nextBtn = $('.next.carousel-control');
+let $prevBtn = $('.prev.carousel-control');
+let currentSlide = 0;
 
-  let gotoSlide = (n) => {
+let gotoSlide = (n) => {
     $slideItems[currentSlide].classList.toggle('active');
     currentSlide = (n + $slideItems.length) % $slideItems.length;
     $slideItems[currentSlide].classList.toggle('active');
-  };
+};
 
-  let nextSlide = () => {
+let nextSlide = () => {
     gotoSlide(currentSlide + 1);
-  };
+};
 
-  let prevSlide = () => {
+let prevSlide = () => {
     gotoSlide(currentSlide - 1);
-  };
+};
 
-  let slideInterval = setInterval(nextSlide, 2000);
+let slideInterval = setInterval(nextSlide, 5000);
 
-  let nextClickHandler = () => {
+let nextClickHandler = () => {
     nextSlide();
     clearInterval(slideInterval);
-    slideInterval = setInterval(nextSlide, 2000);
-  };
+    slideInterval = setInterval(nextSlide, 5000);
+};
 
-  let prevClickHandler = () => {
+let prevClickHandler = () => {
     prevSlide();
     clearInterval(slideInterval);
-    slideInterval = setInterval(nextSlide, 2000);
-  };
+    slideInterval = setInterval(nextSlide, 5000);
+};
 
-  $nextBtn.on('click', nextClickHandler);
-  $prevBtn.on('click', prevClickHandler);
-
-})(jQuery);
+$nextBtn.on('click', nextClickHandler);
+$prevBtn.on('click', prevClickHandler);
