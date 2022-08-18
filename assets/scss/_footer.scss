@@ -1,7 +1,9 @@
 .footer {
   display: flex;
   justify-content: center;
+
   width: 100%;
+
   background-color: rgba(#000000, 0.4);
 
   .wrapper {
@@ -36,7 +38,9 @@
 
     &-title {
       display: block;
+
       color: #ffffff;
+
       font-size: 2rem;
     }
 
@@ -47,8 +51,11 @@
 
   &__post {
     position: relative;
+
     flex: 1 0 calc(100% - 67px);
+
     padding: 20px;
+
     border-radius: 10px;
     background: rgba(0, 0, 0, 0.4);
   }
@@ -57,16 +64,19 @@
     position: absolute;
     top: -19px;
     left: 0;
+
     content: url("../img/twitter-speech-bubble.png");
   }
 
   &__post-text {
     color: $base-color;
+
     line-height: 18px;
   }
 
   &__post-date {
     color: $accent-color;
+
     font-size: 0.83rem;
     font-style: italic;
   }
@@ -97,6 +107,7 @@
   }
   .copyright {
     margin: 30px 15px 15px 15px;
+
     text-align: center;
   }
 }
@@ -111,6 +122,7 @@
 @media (min-width: 851px) {
   .copyright {
     margin: 57px 15px 15px 15px;
+
     text-align: right;
   }
 }
@@ -124,6 +136,7 @@
   }
   .copyright {
     margin: 75px 15px 15px 15px;
+
     text-align: right;
   }
 }
